@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,8 +23,10 @@ namespace LibraryManagementSystem
 
         private void admReturn_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "libraryDBDataSet13.Issue". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.issueTableAdapter.Fill(this.libraryDBDataSet13.Issue);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "libraryDBDataSet17.ViewLend". Sie können sie bei Bedarf verschieben oder entfernen.
+             this.viewLendTableAdapter.Fill(this.libraryDBDataSet17.ViewLend);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "libraryDBDataSet15.ViewLend". Sie können sie bei Bedarf verschieben oder entfernen.
+            // this.viewLendTableAdapter.Fill(this.libraryDBDataSet15.ViewLend);
             // establish connection to db
             string connectionString = ConfigurationManager.ConnectionStrings["LibraryManagementSystem.Properties.Settings.LibraryDB"].ToString();
             con = new SqlConnection(connectionString);
@@ -37,8 +39,7 @@ namespace LibraryManagementSystem
         private void clear()
         {
             admReturnTbxSearchQuery.Text = string.Empty;
-            admReturnTbxUserID.Text = string.Empty;
-            amdReturnTbxBookID.Text = string.Empty;
+            amdReturnTbxLendID.Text = string.Empty;
 
             admReturnBooksLblFine.Text = string.Empty;
         }
@@ -47,7 +48,7 @@ namespace LibraryManagementSystem
         public void display()
         {
             // on intialise display books table
-            cmd = new SqlCommand("SELECT user_id as 'User ID', vorname as 'vorname', book_id as 'Book ID', title as 'Title', date_issued as 'Date Issued', DATEDIFF(day, date_issued, CONVERT(date, GETDATE())) as 'Days Passed' from issue, users, books where i_user_id = user_id and i_book_id = book_id", con);
+            cmd = new SqlCommand("SELECT * FROM [ViewLend]", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sda.Fill(ds);
@@ -65,8 +66,7 @@ namespace LibraryManagementSystem
                 int book_id = Convert.ToInt32(admReturnDgvTable.Rows[e.RowIndex].Cells[2].Value);
                 int user_id = Convert.ToInt32(admReturnDgvTable.Rows[e.RowIndex].Cells[0].Value);
 
-                amdReturnTbxBookID.Text = Convert.ToString(book_id);
-                admReturnTbxUserID.Text = Convert.ToString(user_id);
+                amdReturnTbxLendID.Text = Convert.ToString(book_id);
 
                 // calculate fine too
                 int fine = 0;
@@ -94,7 +94,7 @@ namespace LibraryManagementSystem
                 }
                 else
                 {
-                    cmd = new SqlCommand("SELECT * FROM book_id INNER JOIN user_id ON book_id.ID = user_id.ID where user_id.ID = " + Session.userid, con);
+                    cmd = new SqlCommand("SELECT * FROM [ViewLend] WHERE Book_ID = @searchQuery or User_ID = @searchquery", con);
                     cmd.Parameters.AddWithValue("@searchQuery", Convert.ToInt32(admReturnTbxSearchQuery.Text));
 
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -126,7 +126,7 @@ namespace LibraryManagementSystem
             // check values
             try
             {
-                book_id = int.Parse(amdReturnTbxBookID.Text);
+                book_id = int.Parse(amdReturnTbxLendID.Text);
             }
             catch
             {
@@ -135,7 +135,7 @@ namespace LibraryManagementSystem
             }
             try
             {
-                user_id = int.Parse(admReturnTbxUserID.Text);
+               // user_id = int.Parse(admReturnTbxUserID.Text);
             }
             catch
             {
@@ -148,9 +148,8 @@ namespace LibraryManagementSystem
             {
                 try
                 {
-                    cmd = new SqlCommand("delete from issue where i_book_id = @book_id and i_user_id = @user_id", con);
-                    cmd.Parameters.AddWithValue("@book_id", book_id);
-                    cmd.Parameters.AddWithValue("@user_id", user_id);
+                    cmd = new SqlCommand(@"UPDATE lend SET End_date = CONVERT(date, GETDATE()) WHERE lend_id = @lend_id", con);
+                    cmd.Parameters.AddWithValue("@lend_id", book_id);
 
                     int result = cmd.ExecuteNonQuery();
 
@@ -187,9 +186,6 @@ namespace LibraryManagementSystem
             lg.Show();
         }
 
-        private void admReturnLblBookID_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

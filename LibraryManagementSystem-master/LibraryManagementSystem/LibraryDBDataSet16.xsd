@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LibraryDBDataSet16" targetNamespace="http://tempuri.org/LibraryDBDataSet16.xsd" xmlns:mstns="http://tempuri.org/LibraryDBDataSet16.xsd" xmlns="http://tempuri.org/LibraryDBDataSet16.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LibraryDB" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LibraryDB (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystem.Properties.Settings.GlobalReference.Default.LibraryDB" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewLendTableAdapter" GeneratorDataComponentClassName="ViewLendTableAdapter" Name="ViewLend" UserDataComponentName="ViewLendTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LibraryDB (Settings)" DbObjectName="LibraryDB.dbo.ViewLend" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Customer, [Start Date], [End Date], Title, Ablauf, User_ID, Book_ID FROM dbo.ViewLend</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Customer" DataSetColumn="Customer" />
+              <Mapping SourceColumn="Start Date" DataSetColumn="Start Date" />
+              <Mapping SourceColumn="End Date" DataSetColumn="End Date" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Ablauf" DataSetColumn="Ablauf" />
+              <Mapping SourceColumn="User_ID" DataSetColumn="User_ID" />
+              <Mapping SourceColumn="Book_ID" DataSetColumn="Book_ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LibraryDBDataSet16" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LibraryDBDataSet16" msprop:Generator_UserDSName="LibraryDBDataSet16">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViewLend" msprop:Generator_TableClassName="ViewLendDataTable" msprop:Generator_TableVarName="tableViewLend" msprop:Generator_TablePropName="ViewLend" msprop:Generator_RowDeletingName="ViewLendRowDeleting" msprop:Generator_RowChangingName="ViewLendRowChanging" msprop:Generator_RowEvHandlerName="ViewLendRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewLendRowDeleted" msprop:Generator_UserTableName="ViewLend" msprop:Generator_RowChangedName="ViewLendRowChanged" msprop:Generator_RowEvArgName="ViewLendRowChangeEvent" msprop:Generator_RowClassName="ViewLendRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Customer" msprop:Generator_ColumnVarNameInTable="columnCustomer" msprop:Generator_ColumnPropNameInRow="Customer" msprop:Generator_ColumnPropNameInTable="CustomerColumn" msprop:Generator_UserColumnName="Customer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Start_x0020_Date" msprop:Generator_ColumnVarNameInTable="columnStart_Date" msprop:Generator_ColumnPropNameInRow="Start_Date" msprop:Generator_ColumnPropNameInTable="Start_DateColumn" msprop:Generator_UserColumnName="Start Date" type="xs:dateTime" />
+              <xs:element name="End_x0020_Date" msprop:Generator_ColumnVarNameInTable="columnEnd_Date" msprop:Generator_ColumnPropNameInRow="End_Date" msprop:Generator_ColumnPropNameInTable="End_DateColumn" msprop:Generator_UserColumnName="End Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ablauf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAblauf" msprop:Generator_ColumnPropNameInRow="Ablauf" msprop:Generator_ColumnPropNameInTable="AblaufColumn" msprop:Generator_UserColumnName="Ablauf" type="xs:int" minOccurs="0" />
+              <xs:element name="User_ID" msprop:Generator_ColumnVarNameInTable="columnUser_ID" msprop:Generator_ColumnPropNameInRow="User_ID" msprop:Generator_ColumnPropNameInTable="User_IDColumn" msprop:Generator_UserColumnName="User_ID" type="xs:int" />
+              <xs:element name="Book_ID" msprop:Generator_ColumnVarNameInTable="columnBook_ID" msprop:Generator_ColumnPropNameInRow="Book_ID" msprop:Generator_ColumnPropNameInTable="Book_IDColumn" msprop:Generator_UserColumnName="Book_ID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

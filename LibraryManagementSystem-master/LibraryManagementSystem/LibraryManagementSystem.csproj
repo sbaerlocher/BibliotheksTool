@@ -124,6 +124,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryDBDataSet13.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LibraryDBDataSet141.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryDBDataSet141.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryDBDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryDBDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryDBDataSet161.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryDBDataSet161.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryDBDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryDBDataSet17.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LibraryDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,6 +183,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryDBDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryDBDataSetReturnLend.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryDBDataSetReturnLend.xsd</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -289,6 +314,50 @@
     <None Include="LibraryDBDataSet13.xss">
       <DependentUpon>LibraryDBDataSet13.xsd</DependentUpon>
     </None>
+    <None Include="LibraryDBDataSet141.xsc">
+      <DependentUpon>LibraryDBDataSet141.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDBDataSet141.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryDBDataSet141.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibraryDBDataSet141.xss">
+      <DependentUpon>LibraryDBDataSet141.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDBDataSet15.xsc">
+      <DependentUpon>LibraryDBDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDBDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryDBDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibraryDBDataSet15.xss">
+      <DependentUpon>LibraryDBDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDBDataSet161.xsc">
+      <DependentUpon>LibraryDBDataSet161.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDBDataSet161.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryDBDataSet161.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibraryDBDataSet161.xss">
+      <DependentUpon>LibraryDBDataSet161.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDBDataSet17.xsc">
+      <DependentUpon>LibraryDBDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDBDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryDBDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibraryDBDataSet17.xss">
+      <DependentUpon>LibraryDBDataSet17.xsd</DependentUpon>
+    </None>
     <None Include="LibraryDBDataSet2.xsc">
       <DependentUpon>LibraryDBDataSet2.xsd</DependentUpon>
     </None>
@@ -376,6 +445,17 @@
     </None>
     <None Include="LibraryDBDataSet9.xss">
       <DependentUpon>LibraryDBDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDBDataSetReturnLend.xsc">
+      <DependentUpon>LibraryDBDataSetReturnLend.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDBDataSetReturnLend.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryDBDataSetReturnLend.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibraryDBDataSetReturnLend.xss">
+      <DependentUpon>LibraryDBDataSetReturnLend.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

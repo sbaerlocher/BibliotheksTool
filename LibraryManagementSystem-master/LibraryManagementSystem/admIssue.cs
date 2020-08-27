@@ -24,8 +24,8 @@ namespace LibraryManagementSystem
 
         private void admIssue_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "libraryDBDataSet12.Issue". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.issueTableAdapter.Fill(this.libraryDBDataSet12.Issue);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "libraryDBDataSet16.books". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.booksTableAdapter.Fill(this.libraryDBDataSet16.books);
 
             // establish connection to db
             string connectionString = ConfigurationManager.ConnectionStrings["LibraryManagementSystem.Properties.Settings.LibraryDB"].ToString();
@@ -42,7 +42,7 @@ namespace LibraryManagementSystem
         {
             // on intialise display books table
             //cmd = new SqlCommand("SELECT user_id as 'User ID', vorname as 'vorname', book_id as 'Book ID', title as 'Title', date_issued as 'Date Issued', DATEDIFF(day, date_issued, CONVERT(date, GETDATE())) as 'Days Passed' from issue, users, books where i_user_id = user_id and i_book_id = book_id", con);
-            cmd = new SqlCommand("SELECT * FROM issue, users, books", con);
+            cmd = new SqlCommand("SELECT * FROM Books", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sda.Fill(ds);
@@ -137,7 +137,7 @@ namespace LibraryManagementSystem
             {
                 try
                 {
-                    cmd = new SqlCommand("insert into issue values(@user_id, @book_id, CONVERT(date, GETDATE()))", con);
+                    cmd = new SqlCommand("INSERT INTO lend([Customer_ID],[Book_ID],[Start_Date]) VALUES(@user_id, @book_id, CONVERT(date, GETDATE()))", con);
                     cmd.Parameters.AddWithValue("@user_id", user_id);
                     cmd.Parameters.AddWithValue("@book_id", book_id);
 
@@ -165,7 +165,7 @@ namespace LibraryManagementSystem
 
             if (admIssueRbBoth.Checked == true)
             {
-                cmd = new SqlCommand("select user_id as 'User ID', name as 'Name', book_id as 'Book ID', title as 'Title', date_issued as 'Date Issued', DATEDIFF(day, date_issued, CONVERT(date, GETDATE())) as 'Days Passed' from issue, users, books where i_user_id = user_id and i_book_id = book_id and ( book_id = @searchQuery or user_id = @searchQuery )", con);
+                cmd = new SqlCommand("SELECT * FROM books WHERE author LIKE @searchQuery or title LIKE @searchquery", con);
                 cmd.Parameters.AddWithValue("@searchQuery", "%" + admIssueTbxSearchQuery.Text + "%");
 
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -176,7 +176,7 @@ namespace LibraryManagementSystem
             }
             else if (admIssueRbTitle.Checked == true)
             {
-                cmd = new SqlCommand("SELECT * FROM book_id INNER JOIN user_id ON book_id.ID = user_id.ID where user_id.ID = " + Session.userid, con);
+                cmd = new SqlCommand("SELECT * FROM books WHERE title LIKE @searchquery", con);
                 cmd.Parameters.AddWithValue("@searchQuery", "%" + admIssueTbxSearchQuery.Text + "%");
 
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -187,7 +187,7 @@ namespace LibraryManagementSystem
             }
             else if (admIssueRbAuthor.Checked == true)
             {
-                cmd = new SqlCommand("SELECT * FROM book_id INNER JOIN user_id ON book_id.ID = user_id.ID where user_id.ID = " + Session.userid, con);
+                cmd = new SqlCommand("SELECT * FROM books WHERE author LIKE @searchQuery", con);
                 cmd.Parameters.AddWithValue("@searchQuery", "%" + admIssueTbxSearchQuery.Text + "%");
 
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -213,6 +213,11 @@ namespace LibraryManagementSystem
         }
 
         private void amdIssueTbxBookID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void admIssue_Load_1(object sender, EventArgs e)
         {
 
         }
