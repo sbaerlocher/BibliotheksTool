@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LibraryDBDataSetViewLend" targetNamespace="http://tempuri.org/LibraryDBDataSetViewLend.xsd" xmlns:mstns="http://tempuri.org/LibraryDBDataSetViewLend.xsd" xmlns="http://tempuri.org/LibraryDBDataSetViewLend.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LibraryDB" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LibraryDB (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystem.Properties.Settings.GlobalReference.Default.LibraryDB" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewBooksTableAdapter" GeneratorDataComponentClassName="ViewBooksTableAdapter" Name="ViewBooks" UserDataComponentName="ViewBooksTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LibraryDB (Settings)" DbObjectName="LibraryDB.dbo.ViewBooks" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Book_ID, Title, Author, Publisher, [Year of Pub], Genres, Place, Lend FROM dbo.ViewBooks</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Book_ID" DataSetColumn="Book_ID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Author" DataSetColumn="Author" />
+              <Mapping SourceColumn="Publisher" DataSetColumn="Publisher" />
+              <Mapping SourceColumn="Year of Pub" DataSetColumn="Year of Pub" />
+              <Mapping SourceColumn="Genres" DataSetColumn="Genres" />
+              <Mapping SourceColumn="Place" DataSetColumn="Place" />
+              <Mapping SourceColumn="Lend" DataSetColumn="Lend" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LibraryDBDataSetViewLend" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LibraryDBDataSetViewLend" msprop:Generator_UserDSName="LibraryDBDataSetViewLend">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViewBooks" msprop:Generator_TableClassName="ViewBooksDataTable" msprop:Generator_TableVarName="tableViewBooks" msprop:Generator_TablePropName="ViewBooks" msprop:Generator_RowDeletingName="ViewBooksRowDeleting" msprop:Generator_RowChangingName="ViewBooksRowChanging" msprop:Generator_RowEvHandlerName="ViewBooksRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewBooksRowDeleted" msprop:Generator_UserTableName="ViewBooks" msprop:Generator_RowChangedName="ViewBooksRowChanged" msprop:Generator_RowEvArgName="ViewBooksRowChangeEvent" msprop:Generator_RowClassName="ViewBooksRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Book_ID" msprop:Generator_ColumnVarNameInTable="columnBook_ID" msprop:Generator_ColumnPropNameInRow="Book_ID" msprop:Generator_ColumnPropNameInTable="Book_IDColumn" msprop:Generator_UserColumnName="Book_ID" type="xs:int" />
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Author" msprop:Generator_ColumnVarNameInTable="columnAuthor" msprop:Generator_ColumnPropNameInRow="Author" msprop:Generator_ColumnPropNameInTable="AuthorColumn" msprop:Generator_UserColumnName="Author" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Publisher" msprop:Generator_ColumnVarNameInTable="columnPublisher" msprop:Generator_ColumnPropNameInRow="Publisher" msprop:Generator_ColumnPropNameInTable="PublisherColumn" msprop:Generator_UserColumnName="Publisher" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Year_x0020_of_x0020_Pub" msprop:Generator_ColumnVarNameInTable="columnYear_of_Pub" msprop:Generator_ColumnPropNameInRow="Year_of_Pub" msprop:Generator_ColumnPropNameInTable="Year_of_PubColumn" msprop:Generator_UserColumnName="Year of Pub" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Genres" msprop:Generator_ColumnVarNameInTable="columnGenres" msprop:Generator_ColumnPropNameInRow="Genres" msprop:Generator_ColumnPropNameInTable="GenresColumn" msprop:Generator_UserColumnName="Genres" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Place" msprop:Generator_ColumnVarNameInTable="columnPlace" msprop:Generator_ColumnPropNameInRow="Place" msprop:Generator_ColumnPropNameInTable="PlaceColumn" msprop:Generator_UserColumnName="Place" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Lend" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLend" msprop:Generator_ColumnPropNameInRow="Lend" msprop:Generator_ColumnPropNameInTable="LendColumn" msprop:Generator_UserColumnName="Lend" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ViewBooks" />
+      <xs:field xpath="mstns:Book_ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

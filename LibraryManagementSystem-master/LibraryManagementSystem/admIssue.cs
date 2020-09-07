@@ -25,7 +25,7 @@ namespace LibraryManagementSystem
         private void admIssue_Load(object sender, EventArgs e)
         {
             // TODO: Diese Codezeile lädt Daten in die Tabelle "libraryDBDataSet16.books". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.booksTableAdapter.Fill(this.libraryDBDataSet16.books);
+
 
             // establish connection to db
             string connectionString = ConfigurationManager.ConnectionStrings["LibraryManagementSystem.Properties.Settings.LibraryDB"].ToString();
@@ -103,7 +103,7 @@ namespace LibraryManagementSystem
 
 
             // check two issues
-            cmd = new SqlCommand("SELECT * FROM issue WHERE Customer_ID = @user_id", con);
+            cmd = new SqlCommand("SELECT * FROM lend WHERE Customer_ID = @user_id AND [End_date] is NOT NULL", con);
             cmd.Parameters.AddWithValue("@user_id", user_id);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -118,7 +118,7 @@ namespace LibraryManagementSystem
             }
 
             // check someone already issued
-            cmd = new SqlCommand("SELECT * FROM issue WHERE \"book id\" = @book_id", con);
+            cmd = new SqlCommand("SELECT * FROM lend WHERE book_id = @book_id", con);
             cmd.Parameters.AddWithValue("@book_id", book_id);
             SqlDataAdapter sda1 = new SqlDataAdapter(cmd);
             DataSet ds1 = new DataSet();

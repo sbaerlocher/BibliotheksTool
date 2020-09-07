@@ -28,8 +28,9 @@ namespace LibraryManagementSystem
 
         private void admBookSearch_Load(object sender, EventArgs e)
         {
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "libraryDBDataSet18.books". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.booksTableAdapter1.Fill(this.libraryDBDataSet18.books);
             // TODO: Diese Codezeile lädt Daten in die Tabelle "libraryDBDataSet2.books". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.booksTableAdapter.Fill(this.libraryDBDataSet2.books);
             // copy userid and pwd
             userid = login.userid;
             password = login.password;

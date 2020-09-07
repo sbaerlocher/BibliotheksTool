@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.admBookSearchBtnBack = new System.Windows.Forms.Button();
             this.admBookSearchBtnLogout = new System.Windows.Forms.Button();
@@ -39,30 +38,34 @@
             this.admBookSearchRbAuthor = new System.Windows.Forms.RadioButton();
             this.admBookSearchRbTitle = new System.Windows.Forms.RadioButton();
             this.admBookSearchLblSearch = new System.Windows.Forms.Label();
-            this.admBookSearchDgv = new System.Windows.Forms.DataGridView();
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDBDataSet2 = new LibraryManagementSystem.LibraryDBDataSet2();
             this.booksTableAdapter = new LibraryManagementSystem.LibraryDBDataSet2TableAdapters.booksTableAdapter();
+            this.admBookSearchDgv = new System.Windows.Forms.DataGridView();
+            this.libraryDBDataSet18 = new LibraryManagementSystem.LibraryDBDataSet18();
+            this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.booksTableAdapter1 = new LibraryManagementSystem.LibraryDBDataSet18TableAdapters.booksTableAdapter();
             this.bookIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateIssuedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDaysPasedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearOfPubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lendDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.admBookSearchDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admBookSearchDgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.admBookSearchDgv);
             this.panel1.Controls.Add(this.admBookSearchBtnBack);
             this.panel1.Controls.Add(this.admBookSearchBtnLogout);
             this.panel1.Controls.Add(this.admBookSearchBtnSearch);
@@ -71,7 +74,6 @@
             this.panel1.Controls.Add(this.admBookSearchRbAuthor);
             this.panel1.Controls.Add(this.admBookSearchRbTitle);
             this.panel1.Controls.Add(this.admBookSearchLblSearch);
-            this.panel1.Controls.Add(this.admBookSearchDgv);
             this.panel1.Location = new System.Drawing.Point(89, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1314, 703);
@@ -166,39 +168,6 @@
             this.admBookSearchLblSearch.TabIndex = 25;
             this.admBookSearchLblSearch.Text = "Search Books:";
             // 
-            // admBookSearchDgv
-            // 
-            this.admBookSearchDgv.AutoGenerateColumns = false;
-            this.admBookSearchDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.admBookSearchDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.admBookSearchDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.admBookSearchDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.admBookSearchDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bookIDDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn,
-            this.authorDataGridViewTextBoxColumn,
-            this.userIDDataGridViewTextBoxColumn,
-            this.userNameDataGridViewTextBoxColumn,
-            this.dateIssuedDataGridViewTextBoxColumn,
-            this.totalDaysPasedDataGridViewTextBoxColumn,
-            this.publisherDataGridViewTextBoxColumn,
-            this.yearOfPubDataGridViewTextBoxColumn,
-            this.genresDataGridViewTextBoxColumn,
-            this.placeDataGridViewTextBoxColumn});
-            this.admBookSearchDgv.DataSource = this.booksBindingSource;
-            this.admBookSearchDgv.Location = new System.Drawing.Point(20, 187);
-            this.admBookSearchDgv.Name = "admBookSearchDgv";
-            this.admBookSearchDgv.Size = new System.Drawing.Size(1274, 484);
-            this.admBookSearchDgv.TabIndex = 23;
-            this.admBookSearchDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.admBookSearchDgv_CellContentClick);
-            // 
             // booksBindingSource
             // 
             this.booksBindingSource.DataMember = "books";
@@ -213,83 +182,94 @@
             // 
             this.booksTableAdapter.ClearBeforeFill = true;
             // 
+            // admBookSearchDgv
+            // 
+            this.admBookSearchDgv.AutoGenerateColumns = false;
+            this.admBookSearchDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.admBookSearchDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bookIDDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
+            this.authorDataGridViewTextBoxColumn,
+            this.publisherDataGridViewTextBoxColumn,
+            this.yearOfPubDataGridViewTextBoxColumn,
+            this.genresDataGridViewTextBoxColumn,
+            this.placeDataGridViewTextBoxColumn,
+            this.iSBNDataGridViewTextBoxColumn,
+            this.lendDataGridViewTextBoxColumn});
+            this.admBookSearchDgv.DataSource = this.booksBindingSource1;
+            this.admBookSearchDgv.Location = new System.Drawing.Point(18, 149);
+            this.admBookSearchDgv.Name = "admBookSearchDgv";
+            this.admBookSearchDgv.Size = new System.Drawing.Size(950, 387);
+            this.admBookSearchDgv.TabIndex = 34;
+            // 
+            // libraryDBDataSet18
+            // 
+            this.libraryDBDataSet18.DataSetName = "LibraryDBDataSet18";
+            this.libraryDBDataSet18.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // booksBindingSource1
+            // 
+            this.booksBindingSource1.DataMember = "books";
+            this.booksBindingSource1.DataSource = this.libraryDBDataSet18;
+            // 
+            // booksTableAdapter1
+            // 
+            this.booksTableAdapter1.ClearBeforeFill = true;
+            // 
             // bookIDDataGridViewTextBoxColumn
             // 
             this.bookIDDataGridViewTextBoxColumn.DataPropertyName = "Book_ID";
             this.bookIDDataGridViewTextBoxColumn.HeaderText = "Book_ID";
             this.bookIDDataGridViewTextBoxColumn.Name = "bookIDDataGridViewTextBoxColumn";
             this.bookIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bookIDDataGridViewTextBoxColumn.Width = 97;
             // 
             // titleDataGridViewTextBoxColumn
             // 
             this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
             this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
             this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.Width = 63;
             // 
             // authorDataGridViewTextBoxColumn
             // 
             this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
             this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
             this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
-            this.authorDataGridViewTextBoxColumn.Width = 82;
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User ID";
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.Width = 89;
-            // 
-            // userNameDataGridViewTextBoxColumn
-            // 
-            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "User Name";
-            this.userNameDataGridViewTextBoxColumn.HeaderText = "User Name";
-            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
-            this.userNameDataGridViewTextBoxColumn.Width = 114;
-            // 
-            // dateIssuedDataGridViewTextBoxColumn
-            // 
-            this.dateIssuedDataGridViewTextBoxColumn.DataPropertyName = "Date Issued";
-            this.dateIssuedDataGridViewTextBoxColumn.HeaderText = "Date Issued";
-            this.dateIssuedDataGridViewTextBoxColumn.Name = "dateIssuedDataGridViewTextBoxColumn";
-            this.dateIssuedDataGridViewTextBoxColumn.Width = 121;
-            // 
-            // totalDaysPasedDataGridViewTextBoxColumn
-            // 
-            this.totalDaysPasedDataGridViewTextBoxColumn.DataPropertyName = "Total days pased";
-            this.totalDaysPasedDataGridViewTextBoxColumn.HeaderText = "Total days pased";
-            this.totalDaysPasedDataGridViewTextBoxColumn.Name = "totalDaysPasedDataGridViewTextBoxColumn";
-            this.totalDaysPasedDataGridViewTextBoxColumn.Width = 141;
             // 
             // publisherDataGridViewTextBoxColumn
             // 
             this.publisherDataGridViewTextBoxColumn.DataPropertyName = "Publisher";
             this.publisherDataGridViewTextBoxColumn.HeaderText = "Publisher";
             this.publisherDataGridViewTextBoxColumn.Name = "publisherDataGridViewTextBoxColumn";
-            this.publisherDataGridViewTextBoxColumn.Width = 99;
             // 
             // yearOfPubDataGridViewTextBoxColumn
             // 
             this.yearOfPubDataGridViewTextBoxColumn.DataPropertyName = "Year of Pub";
             this.yearOfPubDataGridViewTextBoxColumn.HeaderText = "Year of Pub";
             this.yearOfPubDataGridViewTextBoxColumn.Name = "yearOfPubDataGridViewTextBoxColumn";
-            this.yearOfPubDataGridViewTextBoxColumn.Width = 83;
             // 
             // genresDataGridViewTextBoxColumn
             // 
             this.genresDataGridViewTextBoxColumn.DataPropertyName = "Genres";
             this.genresDataGridViewTextBoxColumn.HeaderText = "Genres";
             this.genresDataGridViewTextBoxColumn.Name = "genresDataGridViewTextBoxColumn";
-            this.genresDataGridViewTextBoxColumn.Width = 87;
             // 
             // placeDataGridViewTextBoxColumn
             // 
-            this.placeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.placeDataGridViewTextBoxColumn.DataPropertyName = "Place";
             this.placeDataGridViewTextBoxColumn.HeaderText = "Place";
             this.placeDataGridViewTextBoxColumn.Name = "placeDataGridViewTextBoxColumn";
+            // 
+            // iSBNDataGridViewTextBoxColumn
+            // 
+            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
+            // 
+            // lendDataGridViewTextBoxColumn
+            // 
+            this.lendDataGridViewTextBoxColumn.DataPropertyName = "Lend";
+            this.lendDataGridViewTextBoxColumn.HeaderText = "Lend";
+            this.lendDataGridViewTextBoxColumn.Name = "lendDataGridViewTextBoxColumn";
             // 
             // admBookSearch
             // 
@@ -303,9 +283,11 @@
             this.Load += new System.EventHandler(this.admBookSearch_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.admBookSearchDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admBookSearchDgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,21 +302,22 @@
         private System.Windows.Forms.RadioButton admBookSearchRbAuthor;
         private System.Windows.Forms.RadioButton admBookSearchRbTitle;
         private System.Windows.Forms.Label admBookSearchLblSearch;
-        private System.Windows.Forms.DataGridView admBookSearchDgv;
         private System.Windows.Forms.Button admBookSearchBtnBack;
         private LibraryDBDataSet2 libraryDBDataSet2;
         private System.Windows.Forms.BindingSource booksBindingSource;
         private LibraryDBDataSet2TableAdapters.booksTableAdapter booksTableAdapter;
+        private System.Windows.Forms.DataGridView admBookSearchDgv;
+        private LibraryDBDataSet18 libraryDBDataSet18;
+        private System.Windows.Forms.BindingSource booksBindingSource1;
+        private LibraryDBDataSet18TableAdapters.booksTableAdapter booksTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn bookIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateIssuedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalDaysPasedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn publisherDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearOfPubDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn genresDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn placeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lendDataGridViewTextBoxColumn;
     }
 }
