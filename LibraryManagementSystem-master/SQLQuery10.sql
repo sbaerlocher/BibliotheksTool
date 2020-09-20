@@ -1,2 +1,0 @@
-SELECt *
-FROM            users
