@@ -88,3 +88,13 @@ C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\Libr
 C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
 C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
 C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojAssemblyReference.cache
+C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\ClosedXML.dll
+C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\ExcelNumberFormat.dll
+C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\ClosedXML.pdb
+C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\ClosedXML.xml
+C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\ExcelNumberFormat.xml
+C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CopyComplete
+C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.exe.CodeAnalysisLog.xml
+C:\Users\sbaerlocher\Desktop\BibliotheksTool\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.exe.lastcodeanalysissucceeded

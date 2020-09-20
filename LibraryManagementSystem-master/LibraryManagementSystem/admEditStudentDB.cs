@@ -339,5 +339,10 @@ namespace LibraryManagementSystem
         {
 
         }
+
+        private void userBookSearchLblSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

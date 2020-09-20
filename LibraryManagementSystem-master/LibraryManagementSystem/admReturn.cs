@@ -148,6 +148,10 @@ namespace LibraryManagementSystem
             {
                 try
                 {
+                    cmd = new SqlCommand(@"UPDATE ViewLend SET Lend = Null WHERE Lend_ID = @lend_id", con);
+                    cmd.Parameters.AddWithValue("@lend_id", book_id);
+                    cmd.ExecuteNonQuery();
+
                     cmd = new SqlCommand(@"UPDATE lend SET End_date = CONVERT(date, GETDATE()) WHERE lend_id = @lend_id", con);
                     cmd.Parameters.AddWithValue("@lend_id", book_id);
 
@@ -164,6 +168,8 @@ namespace LibraryManagementSystem
                         clear();
                         display();
                     }
+
+
                 }
                 catch
                 {

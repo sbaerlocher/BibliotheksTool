@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.admIssueDgvTable = new System.Windows.Forms.DataGridView();
+            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDBDataSet16 = new LibraryManagementSystem.LibraryDBDataSet16();
             this.admIssueBooksBtnLogout = new System.Windows.Forms.Button();
             this.admIssueBooksBtnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,8 +42,6 @@
             this.admIssueRbAuthor = new System.Windows.Forms.RadioButton();
             this.admIssueRbTitle = new System.Windows.Forms.RadioButton();
             this.admBookSearchLblSearch = new System.Windows.Forms.Label();
-            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDBDataSet16 = new LibraryManagementSystem.LibraryDBDataSet16();
             this.label7 = new System.Windows.Forms.Label();
             this.admIssueBtnIssue = new System.Windows.Forms.Button();
             this.admIssueTbxUserID = new System.Windows.Forms.TextBox();
@@ -58,24 +59,19 @@
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Publisher = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.admIssueDgvTable = new System.Windows.Forms.DataGridView();
             this.bookIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateIssuedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDaysPasedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearOfPubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.admIssueDgvTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.admIssueDgvTable)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,10 +93,38 @@
             this.panel1.Controls.Add(this.amdIssueTbxBookID);
             this.panel1.Controls.Add(this.admIssueLblUserID);
             this.panel1.Controls.Add(this.admIssueLblBookID);
-            this.panel1.Location = new System.Drawing.Point(69, 24);
+            this.panel1.Location = new System.Drawing.Point(-42, -53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(811, 711);
             this.panel1.TabIndex = 0;
+            // 
+            // admIssueDgvTable
+            // 
+            this.admIssueDgvTable.AutoGenerateColumns = false;
+            this.admIssueDgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.admIssueDgvTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bookIDDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
+            this.authorDataGridViewTextBoxColumn,
+            this.publisherDataGridViewTextBoxColumn,
+            this.yearOfPubDataGridViewTextBoxColumn,
+            this.genresDataGridViewTextBoxColumn,
+            this.placeDataGridViewTextBoxColumn});
+            this.admIssueDgvTable.DataSource = this.booksBindingSource;
+            this.admIssueDgvTable.Location = new System.Drawing.Point(12, 286);
+            this.admIssueDgvTable.Name = "admIssueDgvTable";
+            this.admIssueDgvTable.Size = new System.Drawing.Size(755, 150);
+            this.admIssueDgvTable.TabIndex = 69;
+            // 
+            // booksBindingSource
+            // 
+            this.booksBindingSource.DataMember = "books";
+            this.booksBindingSource.DataSource = this.libraryDBDataSet16;
+            // 
+            // libraryDBDataSet16
+            // 
+            this.libraryDBDataSet16.DataSetName = "LibraryDBDataSet16";
+            this.libraryDBDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // admIssueBooksBtnLogout
             // 
@@ -197,16 +221,6 @@
             this.admBookSearchLblSearch.Size = new System.Drawing.Size(64, 20);
             this.admBookSearchLblSearch.TabIndex = 59;
             this.admBookSearchLblSearch.Text = "Search:";
-            // 
-            // booksBindingSource
-            // 
-            this.booksBindingSource.DataMember = "books";
-            this.booksBindingSource.DataSource = this.libraryDBDataSet16;
-            // 
-            // libraryDBDataSet16
-            // 
-            this.libraryDBDataSet16.DataSetName = "LibraryDBDataSet16";
-            this.libraryDBDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label7
             // 
@@ -328,28 +342,6 @@
             this.Publisher.HeaderText = "Publisher";
             this.Publisher.Name = "Publisher";
             // 
-            // admIssueDgvTable
-            // 
-            this.admIssueDgvTable.AutoGenerateColumns = false;
-            this.admIssueDgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.admIssueDgvTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bookIDDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn,
-            this.authorDataGridViewTextBoxColumn,
-            this.userIDDataGridViewTextBoxColumn,
-            this.userNameDataGridViewTextBoxColumn,
-            this.dateIssuedDataGridViewTextBoxColumn1,
-            this.totalDaysPasedDataGridViewTextBoxColumn,
-            this.publisherDataGridViewTextBoxColumn,
-            this.yearOfPubDataGridViewTextBoxColumn,
-            this.genresDataGridViewTextBoxColumn,
-            this.placeDataGridViewTextBoxColumn});
-            this.admIssueDgvTable.DataSource = this.booksBindingSource;
-            this.admIssueDgvTable.Location = new System.Drawing.Point(12, 286);
-            this.admIssueDgvTable.Name = "admIssueDgvTable";
-            this.admIssueDgvTable.Size = new System.Drawing.Size(755, 150);
-            this.admIssueDgvTable.TabIndex = 69;
-            // 
             // bookIDDataGridViewTextBoxColumn
             // 
             this.bookIDDataGridViewTextBoxColumn.DataPropertyName = "Book_ID";
@@ -368,30 +360,6 @@
             this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
             this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
             this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User ID";
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            // 
-            // userNameDataGridViewTextBoxColumn
-            // 
-            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "User Name";
-            this.userNameDataGridViewTextBoxColumn.HeaderText = "User Name";
-            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
-            // 
-            // dateIssuedDataGridViewTextBoxColumn1
-            // 
-            this.dateIssuedDataGridViewTextBoxColumn1.DataPropertyName = "Date Issued";
-            this.dateIssuedDataGridViewTextBoxColumn1.HeaderText = "Date Issued";
-            this.dateIssuedDataGridViewTextBoxColumn1.Name = "dateIssuedDataGridViewTextBoxColumn1";
-            // 
-            // totalDaysPasedDataGridViewTextBoxColumn
-            // 
-            this.totalDaysPasedDataGridViewTextBoxColumn.DataPropertyName = "Total days pased";
-            this.totalDaysPasedDataGridViewTextBoxColumn.HeaderText = "Total days pased";
-            this.totalDaysPasedDataGridViewTextBoxColumn.Name = "totalDaysPasedDataGridViewTextBoxColumn";
             // 
             // publisherDataGridViewTextBoxColumn
             // 
@@ -421,7 +389,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 682);
+            this.ClientSize = new System.Drawing.Size(761, 538);
             this.Controls.Add(this.panel1);
             this.Name = "admIssue";
             this.Text = "Issue Books";
@@ -429,11 +397,11 @@
             this.Load += new System.EventHandler(this.admIssue_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.admIssueDgvTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.issueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.admIssueDgvTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -473,10 +441,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bookIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateIssuedDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalDaysPasedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn publisherDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearOfPubDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn genresDataGridViewTextBoxColumn;

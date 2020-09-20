@@ -42,7 +42,7 @@ namespace LibraryManagementSystem
         {
             // on intialise display books table
             //cmd = new SqlCommand("SELECT user_id as 'User ID', vorname as 'vorname', book_id as 'Book ID', title as 'Title', date_issued as 'Date Issued', DATEDIFF(day, date_issued, CONVERT(date, GETDATE())) as 'Days Passed' from issue, users, books where i_user_id = user_id and i_book_id = book_id", con);
-            cmd = new SqlCommand("SELECT * FROM Books", con);
+            cmd = new SqlCommand("SELECT * FROM Books WHERE Lend is NULL", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sda.Fill(ds);
@@ -103,7 +103,7 @@ namespace LibraryManagementSystem
 
 
             // check two issues
-            cmd = new SqlCommand("SELECT * FROM lend WHERE Customer_ID = @user_id AND [End_date] is NOT NULL", con);
+            cmd = new SqlCommand("SELECT * FROM lend WHERE Customer_ID = @user_id AND [End_date] is null", con);
             cmd.Parameters.AddWithValue("@user_id", user_id);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -118,7 +118,7 @@ namespace LibraryManagementSystem
             }
 
             // check someone already issued
-            cmd = new SqlCommand("SELECT * FROM lend WHERE book_id = @book_id", con);
+            cmd = new SqlCommand("SELECT * FROM lend WHERE book_id = @book_id and [End_date] is null", con);
             cmd.Parameters.AddWithValue("@book_id", book_id);
             SqlDataAdapter sda1 = new SqlDataAdapter(cmd);
             DataSet ds1 = new DataSet();
@@ -149,6 +149,9 @@ namespace LibraryManagementSystem
                         display();
                         clearFields();
                     }
+                    cmd = new SqlCommand("UPDATE books SET Lend =  CONVERT(date, GETDATE()) WHERE Book_ID = @book_id", con);
+                    cmd.Parameters.AddWithValue("@book_id", book_id);
+                    cmd.ExecuteNonQuery();
                 }
                 catch
                 {

@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 
+
+using System.IO;
+using ClosedXML.Excel;
+
 namespace LibraryManagementSystem
 {
     public partial class admBookSearch : Form
@@ -140,5 +144,25 @@ namespace LibraryManagementSystem
         {
 
         }
-    }
+
+        private void admBookExportBtn_Click(object sender, EventArgs e)
+        {
+            string t_path = @"C:\Users\sbaerlocher\Desktop\test.xlsx";
+            string connectionString = ConfigurationManager.ConnectionStrings["LibraryManagementSystem.Properties.Settings.LibraryDB"].ToString();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (SqlDataAdapter da = new SqlDataAdapter("SELECT TOP 10 * FROM books", con))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    XLWorkbook wb = new XLWorkbook();
+                    wb.Worksheets.Add(dt, "WorksheetName");
+                    wb.SaveAs(t_path);
+                }
+            }
+        }
+    } 
 }

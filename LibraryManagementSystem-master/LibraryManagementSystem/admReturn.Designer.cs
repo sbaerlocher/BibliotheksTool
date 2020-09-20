@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.admReturnBooksBtnLogout = new System.Windows.Forms.Button();
             this.admReturnBooksBtnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,6 +39,8 @@
             this.admReturnTbxSearchQuery = new System.Windows.Forms.TextBox();
             this.admBookSearchLblSearch = new System.Windows.Forms.Label();
             this.admReturnDgvTable = new System.Windows.Forms.DataGridView();
+            this.viewLendBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDBDataSet17 = new LibraryManagementSystem.LibraryDBDataSet17();
             this.issueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDBDataSet13 = new LibraryManagementSystem.LibraryDBDataSet13();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,10 +49,7 @@
             this.admReturnLblBookID = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.admReturnBooksLblFine = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
             this.issueTableAdapter = new LibraryManagementSystem.LibraryDBDataSet13TableAdapters.IssueTableAdapter();
-            this.libraryDBDataSet17 = new LibraryManagementSystem.LibraryDBDataSet17();
-            this.viewLendBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewLendTableAdapter = new LibraryManagementSystem.LibraryDBDataSet17TableAdapters.ViewLendTableAdapter();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lend_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,16 +57,18 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Book_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ablaufDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.admReturnDgvTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewLendBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet13)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewLendBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // admReturnBooksBtnLogout
@@ -130,20 +134,56 @@
             // admReturnDgvTable
             // 
             this.admReturnDgvTable.AutoGenerateColumns = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.admReturnDgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.admReturnDgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.admReturnDgvTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.Book_ID,
             this.dataGridViewTextBoxColumn2,
             this.Title,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn3,
+            this.customerDataGridViewTextBoxColumn,
+            this.startDateDataGridViewTextBoxColumn,
+            this.ablaufDataGridViewTextBoxColumn});
             this.admReturnDgvTable.DataSource = this.viewLendBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.admReturnDgvTable.DefaultCellStyle = dataGridViewCellStyle5;
             this.admReturnDgvTable.Location = new System.Drawing.Point(25, 340);
             this.admReturnDgvTable.Name = "admReturnDgvTable";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.admReturnDgvTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.admReturnDgvTable.RowHeadersWidth = 62;
             this.admReturnDgvTable.Size = new System.Drawing.Size(769, 405);
             this.admReturnDgvTable.TabIndex = 58;
             this.admReturnDgvTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.admReturnDgvTable_CellClick);
+            // 
+            // viewLendBindingSource
+            // 
+            this.viewLendBindingSource.DataMember = "ViewLend";
+            this.viewLendBindingSource.DataSource = this.libraryDBDataSet17;
+            // 
+            // libraryDBDataSet17
+            // 
+            this.libraryDBDataSet17.DataSetName = "LibraryDBDataSet17";
+            this.libraryDBDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // issueBindingSource
             // 
@@ -166,7 +206,7 @@
             // admReturnBtnReturn
             // 
             this.admReturnBtnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.admReturnBtnReturn.Location = new System.Drawing.Point(340, 156);
+            this.admReturnBtnReturn.Location = new System.Drawing.Point(429, 109);
             this.admReturnBtnReturn.Name = "admReturnBtnReturn";
             this.admReturnBtnReturn.Size = new System.Drawing.Size(96, 33);
             this.admReturnBtnReturn.TabIndex = 19;
@@ -197,7 +237,6 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.admReturnBooksLblFine);
-            this.panel1.Controls.Add(this.label);
             this.panel1.Controls.Add(this.admReturnBooksBtnLogout);
             this.panel1.Controls.Add(this.admReturnBooksBtnBack);
             this.panel1.Controls.Add(this.label1);
@@ -209,9 +248,9 @@
             this.panel1.Controls.Add(this.admReturnBtnReturn);
             this.panel1.Controls.Add(this.amdReturnTbxLendID);
             this.panel1.Controls.Add(this.admReturnLblBookID);
-            this.panel1.Location = new System.Drawing.Point(38, 12);
+            this.panel1.Location = new System.Drawing.Point(50, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(811, 767);
+            this.panel1.Size = new System.Drawing.Size(885, 624);
             this.panel1.TabIndex = 1;
             // 
             // admReturnBooksLblFine
@@ -223,29 +262,9 @@
             this.admReturnBooksLblFine.Size = new System.Drawing.Size(0, 25);
             this.admReturnBooksLblFine.TabIndex = 70;
             // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.label.Location = new System.Drawing.Point(290, 109);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(72, 25);
-            this.label.TabIndex = 69;
-            this.label.Text = "Fine : ";
-            // 
             // issueTableAdapter
             // 
             this.issueTableAdapter.ClearBeforeFill = true;
-            // 
-            // libraryDBDataSet17
-            // 
-            this.libraryDBDataSet17.DataSetName = "LibraryDBDataSet17";
-            this.libraryDBDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // viewLendBindingSource
-            // 
-            this.viewLendBindingSource.DataMember = "ViewLend";
-            this.viewLendBindingSource.DataSource = this.libraryDBDataSet17;
             // 
             // viewLendTableAdapter
             // 
@@ -289,12 +308,6 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Lend_ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // Book_ID
-            // 
-            this.Book_ID.DataPropertyName = "Book_ID";
-            this.Book_ID.HeaderText = "Book_ID";
-            this.Book_ID.Name = "Book_ID";
-            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Customer";
@@ -313,23 +326,42 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "User_ID";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
+            // customerDataGridViewTextBoxColumn
+            // 
+            this.customerDataGridViewTextBoxColumn.DataPropertyName = "Customer";
+            this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
+            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "Start Date";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "Start Date";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            // 
+            // ablaufDataGridViewTextBoxColumn
+            // 
+            this.ablaufDataGridViewTextBoxColumn.DataPropertyName = "Ablauf";
+            this.ablaufDataGridViewTextBoxColumn.HeaderText = "Ablauf";
+            this.ablaufDataGridViewTextBoxColumn.Name = "ablaufDataGridViewTextBoxColumn";
+            this.ablaufDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // admReturn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 682);
+            this.ClientSize = new System.Drawing.Size(970, 664);
             this.Controls.Add(this.panel1);
             this.Name = "admReturn";
             this.Text = "Return Books";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.admReturn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.admReturnDgvTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewLendBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.issueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet13)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewLendBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,7 +381,6 @@
         private System.Windows.Forms.Label admReturnLblBookID;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label admReturnBooksLblFine;
-        private System.Windows.Forms.Label label;
         private LibraryDBDataSet13 libraryDBDataSet13;
         private System.Windows.Forms.BindingSource issueBindingSource;
         private LibraryDBDataSet13TableAdapters.IssueTableAdapter issueTableAdapter;
@@ -362,9 +393,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn User_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Book_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ablaufDataGridViewTextBoxColumn;
     }
 }

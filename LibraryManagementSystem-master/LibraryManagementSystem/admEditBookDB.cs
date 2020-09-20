@@ -22,10 +22,9 @@ namespace LibraryManagementSystem
 
         private void admEditBookDB_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "libraryDBDataSet4.books". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.booksTableAdapter1.Fill(this.libraryDBDataSet4.books);
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "libraryDBDataSet3.books". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.booksTableAdapter.Fill(this.libraryDBDataSet3.books);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "libraryDBDataSet19.books". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.booksTableAdapter2.Fill(this.libraryDBDataSet19.books);
+
 
             // display table
             displayBooks();
